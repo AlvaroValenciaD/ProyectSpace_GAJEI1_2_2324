@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Explore_Develop.unity
+- path: Assets/Scenes/Combat_Development.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
