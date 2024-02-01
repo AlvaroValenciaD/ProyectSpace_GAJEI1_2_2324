@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2524525455515440597}
   - component: {fileID: 2524525455515440602}
   - component: {fileID: 2524525455515440603}
-  - component: {fileID: 6359309552799268265}
+  - component: {fileID: 1822973324489009844}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: Enemy
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6359309552799268265
+--- !u!114 &1822973324489009844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,11 +105,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2524525455515440601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e6050d337473e1429e7ed152fd33cf0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a5ed107723530e49b3dc633cb865853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  enemyTipe: {fileID: 0}
+  hp: 6
   def: 0
   att: 0
   sp: 0
-  vel: 0
+  vel: 12
+  ID: 0

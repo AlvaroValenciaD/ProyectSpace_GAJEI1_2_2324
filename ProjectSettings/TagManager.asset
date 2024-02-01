@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Pj
   - spawn
+  - MC
   layers:
   - Default
   - TransparentFX

@@ -57,8 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Combat\Pjs\Pj1.cs" />
-    <Compile Include="Assets\Scripts\Combat\Combat.cs" />
-    <Compile Include="Assets\Scripts\Combat\Enemys\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Combat\CursorManager.cs" />
+    <Compile Include="Assets\Scripts\Combat\CanvasManager.cs" />
+    <Compile Include="Assets\Scripts\Combat\CombatManager.cs" />
+    <Compile Include="Assets\Scripts\Combat\Enemys\Enemy1.cs" />
+    <Compile Include="Assets\Scripts\Combat\Enemys\Enemy2.cs" />
+    <Compile Include="Assets\Scripts\Combat\Enemys\Enemy3.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -112,4 +112,4 @@ MonoBehaviour:
   def: 0
   att: 0
   sp: 0
-  vel: 0
+  vel: 10

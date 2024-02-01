@@ -13,15 +13,7 @@ public class Pj1 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) )
-        {
-            Attack();
-        }
-    }
 
-    void Attack()
-    {
-        
     }
 
     void Death()
