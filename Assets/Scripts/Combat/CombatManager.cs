@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CombatManager : MonoBehaviour
 {
     public GameObject[] enemies, senemy;
     int numEnem;
-    public List<GameObject> turnLane;
+    public List<Units> turnLane;
+    Units playingUnit;
 
 
     void Start()
     {
-        EnemyGen(); TimeLaneGenerator();
+        EnemyGen(); TimeLaneGenerator(); LaneTimeSort(); TurnAssignment();
     }
 
     void Update()
@@ -19,9 +21,17 @@ public class CombatManager : MonoBehaviour
         
     }
 
-    void TurnLane()
+    void TurnAssignment()
     {
-
+        if (turnLane.Count > 0)
+        {
+            playingUnit = turnLane[0];
+        }
+        else
+        {
+            TimeLaneGenerator(); LaneTimeSort();
+        }
+       
     }
 
     public void Attack1()
@@ -38,26 +48,24 @@ public class CombatManager : MonoBehaviour
 
     void EnemyGen()
     {
-        
-        numEnem = Random.Range(1, 9);
+
+        numEnem = Random.Range(1, 8);
 
         for (int i = 0; i <= numEnem; i++)
         {
             int typeEnem = Random.Range(0, enemies.Length);
+
             if (typeEnem == 0)
             {
                 GameObject enemPf = Instantiate(enemies[typeEnem], senemy[i].transform.position, Quaternion.identity);
-                enemPf.GetComponent<Enemy1>().ID = i+1;
             }
-            if (typeEnem == 1)
+            else if (typeEnem == 1)
             {
                 GameObject enemPf = Instantiate(enemies[typeEnem], senemy[i].transform.position, Quaternion.identity);
-                enemPf.GetComponent<Enemy2>().ID = i+1;
             }
-            if (typeEnem == 2)
+            else if (typeEnem == 2)
             {
                 GameObject enemPf = Instantiate(enemies[typeEnem], senemy[i].transform.position, Quaternion.identity);
-                enemPf.GetComponent<Enemy3>().ID = i+1;
             }
 
         }
@@ -70,29 +78,41 @@ public class CombatManager : MonoBehaviour
         aux = GameObject.FindGameObjectsWithTag("MC");
         for (int i = 0; i < aux.Length; i++)
         {
-            turnLane.Add(aux[i]);
+            turnLane.Add(aux[i].GetComponent<Units>());
         }
+        
+
         aux = GameObject.FindGameObjectsWithTag("Pj");
         for (int i = 0; i < aux.Length; i++)
         {
-            turnLane.Add(aux[i]);
+            turnLane.Add(aux[i].GetComponent<Units>());
         }
+
         aux = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i = 0; i < aux.Length; i++)
         {
-            turnLane.Add(aux[i]);
+            turnLane.Add(aux[i].GetComponent<Units>());
         }
 
-        Debug.Log(turnLane.Count);
+
+        //Debug.Log(turnLane.Count);
     }
 
-    void EndTurn()
+    public void EndTurn()
     {
-
+        turnLane.Remove(playingUnit);
+        LaneTimeSort();
+        TurnAssignment();
     }
 
     void LaneTimeSort()
     {
+        turnLane = turnLane.OrderByDescending(q => q.spe).ToList();
+        for (int i = 0; i < turnLane.Count; i++)
+        {
+            Debug.Log(turnLane[i].spe + "   "+  turnLane[i].name);
+        }
+        
     }
 
 }

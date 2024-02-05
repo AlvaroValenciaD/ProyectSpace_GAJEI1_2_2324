@@ -105,13 +105,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2524525455515440601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a5ed107723530e49b3dc633cb865853, type: 3}
+  m_Script: {fileID: 11500000, guid: 477cdd9dc6e2cf74b86e63408718ddef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTipe: {fileID: 0}
-  hp: 6
-  def: 0
+  hp: 20
   att: 0
-  sp: 0
-  vel: 12
+  def: 0
+  spD: 0
+  spe: 10
   ID: 0
