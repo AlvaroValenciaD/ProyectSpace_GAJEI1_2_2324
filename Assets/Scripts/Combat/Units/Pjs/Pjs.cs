@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pjs : Units
 {
-    public GameObject hpBar;
+    public GameObject hpBar, curPosition;
     void Start()
     {
         

@@ -13,7 +13,11 @@ public class CombatManager : MonoBehaviour
 
     void Start()
     {
-        EnemyGen(); TimeLaneGenerator(); LaneTimeSort(); TurnAssignment();
+        EnemyGen();
+        TimeLaneGenerator();
+        LaneTimeSort();
+        TurnAssignment();
+        PlayerCursorManagement();
     }
 
     void Update()
@@ -103,6 +107,7 @@ public class CombatManager : MonoBehaviour
         turnLane.Remove(playingUnit);
         LaneTimeSort();
         TurnAssignment();
+        GameManager.current.cursorM.CursorPjMovement(turnLane[0].GetComponent<Pjs>());
     }
 
     void LaneTimeSort()
@@ -113,6 +118,11 @@ public class CombatManager : MonoBehaviour
             Debug.Log(turnLane[i].spe + "   "+  turnLane[i].name);
         }
         
+    }
+
+    void PlayerCursorManagement()
+    {
+        GameManager.current.cursorM.CursorPjMovement(turnLane[0].GetComponent<Pjs>());
     }
 
 }
