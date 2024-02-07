@@ -9,8 +9,7 @@ public class CursorManager : MonoBehaviour
     
     void Start()
     {
-        CursorPjMovement(GameManager.current.combatM.turnLane[0].GetComponent<Pjs>());
-        CursorMeshOn(pjCur);
+        CursorPjMovement(GameManager.current.combatM.playingUnit);
     }
 
     void Update()
@@ -30,10 +29,19 @@ public class CursorManager : MonoBehaviour
         sprite.enabled = false;
     }
 
-    public void CursorPjMovement(Pjs inputPj)
+    public void CursorPjMovement(Units inputUnit)
     {
 
-        pjCur.transform.position = inputPj.curPosition.transform.position;
+        if (inputUnit.CompareTag("Pj") == true || inputUnit.CompareTag("MC") == true)
+        {
+            CursorMeshOn(pjCur);
+            pjCur.transform.position = inputUnit.GetComponent<Pjs>().curPosition.transform.position;
+        }
+        else if (inputUnit.CompareTag("Enemy") == true)
+        {
+            CursorMeshOff(pjCur);
+        }
+        
 
     }
 

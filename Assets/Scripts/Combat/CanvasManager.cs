@@ -8,8 +8,9 @@ using Slider = UnityEngine.UI.Slider;
 
 public class CanvasManager : MonoBehaviour
 {
-    public GameObject attButton, skillButt, objButt, sk1Butt, sk2Butt, sk3Butt;
+    public GameObject attButton, skillButt, objButt, att1Butt, att2Butt, sk1Butt, sk2Butt, sk3Butt;
     bool openAll, openSk = false;
+
     void Start()
     {
         HpRefresh();
@@ -65,24 +66,65 @@ public class CanvasManager : MonoBehaviour
             CloseAll();
         }
     }
-    public void OpenSkills()
+
+    public void OpenAttacks(Units inputUnit)
     {
-        if (gameObject.CompareTag("MC") && !openSk)
+        inputUnit = GameManager.current.combatM.playingUnit;
+
+        if (inputUnit.CompareTag("MC") && !openSk)
         {
-            sk1Butt.SetActive(true); sk2Butt.SetActive(true); sk3Butt.SetActive(true); openSk = true;
+            att1Butt.SetActive(true);
+            att2Butt.SetActive(true);
+            openSk = true;
         }
         else if (!openSk)
         {
-            sk1Butt.SetActive(true); sk2Butt.SetActive(true); openSk = true;
+            att1Butt.SetActive(true);
+            openSk = true;
         }
         else if (openSk)
         {
-            sk1Butt.SetActive(false); sk2Butt.SetActive(false); sk3Butt.SetActive(false); openSk = false;
+            att1Butt.SetActive(false);
+            att2Butt.SetActive(false); 
+            openSk = false;
+        }
+    }
+
+    public void OpenSkills(Units inputUnit)
+    {
+        inputUnit = GameManager.current.combatM.playingUnit;
+        if (inputUnit.CompareTag("MC") && !openSk)
+        {
+            sk1Butt.SetActive(true);
+            sk2Butt.SetActive(true);
+            sk3Butt.SetActive(true);
+            openSk = true;
+        }
+        else if (!openSk)
+        {
+            sk1Butt.SetActive(true);
+            sk2Butt.SetActive(true);
+            openSk = true;
+        }
+        else if (openSk)
+        {
+            sk1Butt.SetActive(false);
+            sk2Butt.SetActive(false);
+            sk3Butt.SetActive(false);
+            openSk = false;
         }
     }
     
     void CloseAll()
     {
-        attButton.SetActive(false); skillButt.SetActive(false); objButt.SetActive(false); sk1Butt.SetActive(false); sk2Butt.SetActive(false); sk3Butt.SetActive(false); openAll = false;
+        attButton.SetActive(false);
+        skillButt.SetActive(false);
+        objButt.SetActive(false);
+        att1Butt.SetActive(false);
+        att2Butt.SetActive(false);
+        sk1Butt.SetActive(false);
+        sk2Butt.SetActive(false);
+        sk3Butt.SetActive(false);
+        openAll = false;
     }
 }

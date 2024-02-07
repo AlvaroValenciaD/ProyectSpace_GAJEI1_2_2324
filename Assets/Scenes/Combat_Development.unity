@@ -2733,6 +2733,7 @@ MonoBehaviour:
   - {fileID: 180313460}
   - {fileID: 1127750978}
   turnLane: []
+  playingUnit: {fileID: 0}
 --- !u!1 &915187678
 GameObject:
   m_ObjectHideFlags: 0
@@ -3167,6 +3168,8 @@ MonoBehaviour:
   attButton: {fileID: 1128788034}
   skillButt: {fileID: 1388505861}
   objButt: {fileID: 657657414}
+  att1Butt: {fileID: 1553169943}
+  att2Butt: {fileID: 1176739441}
   sk1Butt: {fileID: 1212167189}
   sk2Butt: {fileID: 1916478201}
   sk3Butt: {fileID: 2085522918}
@@ -3518,6 +3521,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 980398539}
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: OpenAttacks
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1090119492}
+          m_ObjectArgumentAssemblyTypeName: Pjs, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1212167189}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -3553,30 +3568,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1553169943}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1176739441}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1128788037
 MonoBehaviour:
@@ -4928,10 +4919,10 @@ MonoBehaviour:
       - m_Target: {fileID: 980398539}
         m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
         m_MethodName: OpenSkills
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1090119492}
+          m_ObjectArgumentAssemblyTypeName: Pjs, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

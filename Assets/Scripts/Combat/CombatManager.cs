@@ -8,7 +8,7 @@ public class CombatManager : MonoBehaviour
     public GameObject[] enemies, senemy;
     int numEnem;
     public List<Units> turnLane;
-    Units playingUnit;
+    public Units playingUnit;
 
 
     void Start()
@@ -107,7 +107,8 @@ public class CombatManager : MonoBehaviour
         turnLane.Remove(playingUnit);
         LaneTimeSort();
         TurnAssignment();
-        GameManager.current.cursorM.CursorPjMovement(turnLane[0].GetComponent<Pjs>());
+        GameManager.current.canvasM.HpRefresh();
+        GameManager.current.cursorM.CursorPjMovement(playingUnit);
     }
 
     void LaneTimeSort()
