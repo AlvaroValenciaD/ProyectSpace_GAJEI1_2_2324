@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 342}
   m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-  controlID: 70
+  controlID: 118
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 71
+  controlID: 16
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 72
+  controlID: 17
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -396,9 +396,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2a470000
-      m_LastClickedID: 18218
-      m_ExpandedIDs: 48fbffffa8450000fc450000344600009a460000c04600003647000054470000b6470000
+      m_SelectedIDs: a0470000
+      m_LastClickedID: 18336
+      m_ExpandedIDs: 50fbffffaa470000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -458,9 +458,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 510.29874, y: 276.43008, z: -0.042053223}
+    m_Target: {x: 7, y: 1.9000001, z: 10}
     speed: 2
-    m_Value: {x: 510.29874, y: 276.43008, z: -0.042053223}
+    m_Value: {x: 7, y: 1.9000001, z: 10}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -511,9 +511,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 257.43912
+    m_Target: 4.590394
     speed: 2
-    m_Value: 257.43912
+    m_Value: 4.590394
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -576,22 +576,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Combat
+    - Assets/PreFabs/Enemys
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Combat
+  - Assets/PreFabs/Enemys
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\CES\Desktop\ProyectSpace_GAJEI1_2_2324
+  m_LastProjectPath: D:\ProyectSpace_GAJEI1_2_2324
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a4a0000
-    m_LastClickedID: 18954
-    m_ExpandedIDs: 00000000084a00000a4a00000c4a00000e4a0000104a000000ca9a3b
+    m_SelectedIDs: fe4e0000
+    m_LastClickedID: 20222
+    m_ExpandedIDs: 00000000044a0000064a0000084a00000a4a00000c4a0000424a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,7 +619,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000084a00000a4a00000c4a00000e4a0000104a0000
+    m_ExpandedIDs: 00000000044a0000064a0000084a00000a4a00000c4a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -644,8 +644,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 58110000
-    m_LastClickedInstanceID: 4440
+    m_SelectedInstanceIDs: 72460000
+    m_LastClickedInstanceID: 18034
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300000868000000000000
     m_RenameOverlay:

@@ -3219,10 +3219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed23c5378c484e64ea975465fbbe89d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
-  hpMax: 10
-  att: 0
-  def: 0
+  hp: 12
+  hpMax: 12
+  att: 10
+  def: 6
   spD: 0
   spe: 10
   hpBar: {fileID: 333414012}
@@ -4685,10 +4685,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2a784d7a0ef7d4887fa8e5475d6d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
+  hp: 10
   hpMax: 10
-  att: 0
-  def: 0
+  att: 6
+  def: 6
   spD: 0
   spe: 12
   hpBar: {fileID: 1253706675}
@@ -5572,10 +5572,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c144801962583ed4186eb68f7a25bead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 15
   hpMax: 15
-  att: 0
-  def: 0
+  att: 5
+  def: 10
   spD: 0
   spe: 8
   hpBar: {fileID: 977155060}
@@ -6291,10 +6291,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3bc94b4e5b8c04da956dd3817e83a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 8
-  hpMax: 8
-  att: 0
-  def: 0
+  hp: 10
+  hpMax: 10
+  att: 8
+  def: 6
   spD: 0
   spe: 14
   hpBar: {fileID: 1772375790}

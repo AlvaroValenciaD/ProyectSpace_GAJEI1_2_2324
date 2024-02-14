@@ -109,8 +109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
-  att: 0
-  def: 0
+  hpMax: 0
+  att: 5
+  def: 5
   spD: 0
   spe: 10
-  ID: 0
+  id: 0

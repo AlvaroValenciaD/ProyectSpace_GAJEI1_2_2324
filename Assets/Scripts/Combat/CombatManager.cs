@@ -18,6 +18,7 @@ public class CombatManager : MonoBehaviour
         LaneTimeSort();
         TurnAssignment();
         PlayerCursorManagement();
+        EnemyTurn(playingUnit);
     }
 
     void Update()
@@ -102,6 +103,45 @@ public class CombatManager : MonoBehaviour
         //Debug.Log(turnLane.Count);
     }
 
+    public void EnemyTurn(Units inputUnit)
+    {
+        if (playingUnit.CompareTag("Enemy"))
+        {
+            playingUnit.GetComponent<Enemy>().EnemyAttacking();
+        }
+
+    }
+
+    public int DamageCalculator(Units attackingUnit, Units deffendingUnit)
+    {
+        int critRate = Random.Range(1, 101);
+
+        if (critRate >= 5)
+        {
+            float dmgf = (attackingUnit.att * 1.5f) - deffendingUnit.def;
+            int dmg = (int) dmgf;
+            if (dmg <= 0)
+            {
+                dmg = 1;
+            }
+            Debug.Log("Hago " + dmg + " daño a " + deffendingUnit.name);
+            return dmg;
+        }
+        else
+        {
+            int dmg = attackingUnit.att - deffendingUnit.def;
+
+            if (dmg <= 0)
+            {
+                dmg = 1;
+            }
+
+            Debug.Log("Hago " + dmg + " daño a " + deffendingUnit.name);
+            return dmg;
+        }
+
+    }
+
     public void EndTurn()
     {
         turnLane.Remove(playingUnit);
@@ -109,15 +149,16 @@ public class CombatManager : MonoBehaviour
         TurnAssignment();
         GameManager.current.canvasM.HpRefresh();
         GameManager.current.cursorM.CursorPjMovement(playingUnit);
+        EnemyTurn(playingUnit);
     }
 
     void LaneTimeSort()
     {
         turnLane = turnLane.OrderByDescending(q => q.spe).ToList();
-        for (int i = 0; i < turnLane.Count; i++)
-        {
-            Debug.Log(turnLane[i].spe + "   "+  turnLane[i].name);
-        }
+        //for (int i = 0; i < turnLane.Count; i++)
+        //{
+        //    Debug.Log(turnLane[i].spe + "   "+  turnLane[i].name);
+        //}
         
     }
 
