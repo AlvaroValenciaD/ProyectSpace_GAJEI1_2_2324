@@ -22,24 +22,6 @@ public class CanvasManager : MonoBehaviour
         
     }
 
-    public void EndTurnCanvas()
-    {
-        GameManager.current.combatM.EndTurn();
-        CloseAll();
-    }
-
-    public void Attack1Canvas()
-    {
-        GameManager.current.combatM.Attack1();
-        CloseAll();
-    }
-
-    public void Attack2Canvas()
-    {
-        GameManager.current.combatM.Attack2();
-        CloseAll();
-    }
-
     public void HpRefresh()
     {
         foreach (Pjs hpBar in GameManager.current.pjList)
@@ -115,7 +97,7 @@ public class CanvasManager : MonoBehaviour
         }
     }
     
-    void CloseAll()
+    public void CloseAll()
     {
         attButton.SetActive(false);
         skillButt.SetActive(false);

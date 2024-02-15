@@ -11,12 +11,14 @@ public class Units : MonoBehaviour
     {
         if (hp<=0)
         {
+            Debug.Log( name + " se muere");
             Death();
         }
     }
     void Death()
     {
-        Destroy(gameObject);
+        hp = 0;
+        Destroy(this.gameObject);
     }
 
 }

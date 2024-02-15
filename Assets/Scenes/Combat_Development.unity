@@ -2734,6 +2734,7 @@ MonoBehaviour:
   - {fileID: 1127750978}
   turnLane: []
   playingUnit: {fileID: 0}
+  attackingMode: 0
 --- !u!1 &915187678
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,9 +3757,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980398539}
-        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
-        m_MethodName: EndTurnCanvas
+      - m_Target: {fileID: 907093137}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
+        m_MethodName: EndTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3889,9 +3890,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980398539}
-        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
-        m_MethodName: Attack2Canvas
+      - m_Target: {fileID: 907093137}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
+        m_MethodName: Attack2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5300,9 +5301,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980398539}
-        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
-        m_MethodName: Attack1Canvas
+      - m_Target: {fileID: 907093137}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
+        m_MethodName: Attack1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

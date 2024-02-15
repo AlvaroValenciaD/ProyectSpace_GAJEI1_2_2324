@@ -6,9 +6,12 @@ using System.Linq;
 public class CombatManager : MonoBehaviour
 {
     public GameObject[] enemies, senemy;
-    int numEnem;
+    int numEnem, playerAttack;
     public List<Units> turnLane;
     public Units playingUnit;
+    public bool attackingMode;
+    Outline outline;
+    bool outlineOn;
 
 
     void Start()
@@ -23,7 +26,17 @@ public class CombatManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (attackingMode)
+        {
+            if (playerAttack == 0)
+            {
+                PlayerAttack(playerAttack);
+            }
+            if (playerAttack == 1)
+            {
+                PlayerAttack(playerAttack);
+            }
+        }
     }
 
     void TurnAssignment()
@@ -39,16 +52,46 @@ public class CombatManager : MonoBehaviour
        
     }
 
+    void PlayerAttack(int attType)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            if (hit.transform.CompareTag("Enemy"))
+            {
+                outline = hit.transform.GetComponent<Outline>();
+                outline.enabled = true;
+                outlineOn = true;
+
+                if (Input.GetMouseButton(0))
+                {
+                    outline.enabled = false;
+                    hit.transform.GetComponent<Enemy>().hp = hit.transform.GetComponent<Enemy>().hp - (DamageCalculator(playingUnit, hit.transform.GetComponent<Units>()) + (attType * 5));
+                    Debug.Log(playingUnit.name + " hace " + (DamageCalculator(playingUnit, hit.transform.GetComponent<Units>()) + (attType * 5)) + " de daño a " + hit.transform.name);
+                    EndTurn();
+                    
+                }
+            }
+            else if (!hit.transform.CompareTag("Enemy") && outlineOn)
+            {
+                outline.enabled = false;
+                outlineOn = false;
+            }
+        }
+    }
+
     public void Attack1()
     {
-        Debug.Log("Bum martillazo en el ano");
-        EndTurn();
+        attackingMode = true;
+        playerAttack = 0;
     }
 
     public void Attack2()
     {
-        Debug.Log("Bum martillazo en el duodeno");
-        EndTurn();
+        attackingMode = true;
+        playerAttack = 1;
     }
 
     void EnemyGen()
@@ -63,14 +106,17 @@ public class CombatManager : MonoBehaviour
             if (typeEnem == 0)
             {
                 GameObject enemPf = Instantiate(enemies[typeEnem], senemy[i].transform.position, Quaternion.identity);
+                enemPf.GetComponent<Enemy>().id = i + 1;
             }
             else if (typeEnem == 1)
             {
                 GameObject enemPf = Instantiate(enemies[typeEnem], senemy[i].transform.position, Quaternion.identity);
+                enemPf.GetComponent<Enemy>().id = i + 1;
             }
             else if (typeEnem == 2)
             {
                 GameObject enemPf = Instantiate(enemies[typeEnem], senemy[i].transform.position, Quaternion.identity);
+                enemPf.GetComponent<Enemy>().id = i + 1;
             }
 
         }
@@ -124,7 +170,11 @@ public class CombatManager : MonoBehaviour
             {
                 dmg = 1;
             }
-            Debug.Log("Hago " + dmg + " daño a " + deffendingUnit.name);
+            if (attackingUnit.CompareTag("Enemy"))
+            {
+                Debug.Log(attackingUnit.name + " Hace " + dmg + " daño a " + deffendingUnit.name);
+            }
+            
             return dmg;
         }
         else
@@ -135,8 +185,10 @@ public class CombatManager : MonoBehaviour
             {
                 dmg = 1;
             }
-
-            Debug.Log("Hago " + dmg + " daño a " + deffendingUnit.name);
+            if (attackingUnit.CompareTag("Enemy"))
+            {
+                Debug.Log(attackingUnit.name + " Hace " + dmg + " daño a " + deffendingUnit.name);
+            }
             return dmg;
         }
 
@@ -144,10 +196,12 @@ public class CombatManager : MonoBehaviour
 
     public void EndTurn()
     {
+        attackingMode = false;
         turnLane.Remove(playingUnit);
         LaneTimeSort();
         TurnAssignment();
         GameManager.current.canvasM.HpRefresh();
+        GameManager.current.canvasM.CloseAll();
         GameManager.current.cursorM.CursorPjMovement(playingUnit);
         EnemyTurn(playingUnit);
     }

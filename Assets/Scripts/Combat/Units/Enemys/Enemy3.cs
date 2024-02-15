@@ -13,19 +13,4 @@ public class Enemy3 : Enemy
     {
         gameObject.name = "Enemy3" + " ID " + id.ToString();
     }
-
-    
-    void Update()
-    {
-        Death();
-    }
-
-    void Death()
-    {
-        if (hp <= 0)
-        {
-            Destroy(gameObject);
-        }
-
-    }
 }
