@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
-    public GameObject curE1, curE2, CurE3, CurE4, CurE5, CurE6, CurE7, CurE8;
     public GameObject pjCur, enemCur;
     
     void Start()

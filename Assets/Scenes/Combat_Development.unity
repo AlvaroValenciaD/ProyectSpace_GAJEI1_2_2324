@@ -3187,6 +3187,7 @@ GameObject:
   - component: {fileID: 1090119492}
   - component: {fileID: 1090119491}
   - component: {fileID: 1090119495}
+  - component: {fileID: 1090119496}
   m_Layer: 0
   m_Name: pj1
   m_TagString: MC
@@ -3310,6 +3311,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1090119496
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090119490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f09a1d7d560373e42b031733b70f180a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1114559829
 GameObject:
   m_ObjectHideFlags: 0
@@ -5192,14 +5212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b36b717502506841ab1839299f9cd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curE1: {fileID: 1305490934}
-  curE2: {fileID: 838187245}
-  CurE3: {fileID: 749840167}
-  CurE4: {fileID: 415543773}
-  CurE5: {fileID: 385559133}
-  CurE6: {fileID: 449695369}
-  CurE7: {fileID: 1182371465}
-  CurE8: {fileID: 1490074363}
   pjCur: {fileID: 1765902895}
   enemCur: {fileID: 596069373}
 --- !u!4 &1552486467

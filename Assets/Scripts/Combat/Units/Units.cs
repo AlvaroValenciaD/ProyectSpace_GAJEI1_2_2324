@@ -15,10 +15,10 @@ public class Units : MonoBehaviour
             Death();
         }
     }
-    void Death()
+    public void Death()
     {
         hp = 0;
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
 }
